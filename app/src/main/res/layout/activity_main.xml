@@ -12,6 +12,25 @@
         android:isScrollContainer="true"
         tools:context=".MainActivity">
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scrollY="@android:dimen/notification_large_icon_height"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/quiiz" />
+
         <android.support.constraint.Guideline
             android:id="@+id/guideline"
             android:layout_width="wrap_content"
@@ -35,7 +54,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:text="Please Enter Your Name"
+            android:text="@string/name_q"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -52,8 +71,9 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:ems="10"
-            android:hint="ex: Alice Mark"
+            android:hint="@string/name_ans"
             android:inputType="textPersonName"
+            android:autofillHints="no"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.216"
             app:layout_constraintStart_toStartOf="@+id/guideline"
@@ -68,7 +88,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:text="Enter your Age !"
+            android:text="@string/age_q"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -85,8 +105,9 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:ems="10"
-            android:hint="ex: 25"
+            android:hint="@string/age_ans"
             android:inputType="textPersonName"
+            android:autofillHints="no"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.216"
             app:layout_constraintStart_toStartOf="@+id/guideline"
@@ -99,7 +120,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="32dp"
-            android:text="what is the largest state in USA?"
+            android:text="@string/first_q"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -111,7 +132,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
-            android:text="los angeles"
+            android:text="@string/checkbox_one"
             app:layout_constraintEnd_toStartOf="@+id/checkBox2"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -121,7 +142,7 @@
             android:id="@+id/checkBox2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Alaska"
+            android:text="@string/checkbox_two"
             app:layout_constraintBottom_toBottomOf="@+id/checkBox"
             app:layout_constraintEnd_toStartOf="@+id/checkBox3"
             app:layout_constraintHorizontal_bias="0.5"
@@ -131,7 +152,7 @@
             android:id="@+id/checkBox3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Both"
+            android:text="@string/checkbox_three"
             app:layout_constraintBottom_toBottomOf="@+id/checkBox2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -146,7 +167,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:text="Let's Start !"
+            android:text="@string/start"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.43"
@@ -160,7 +181,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="16dp"
-            android:text="what name did the greek give to circle of animals?"
+            android:text="@string/sec_q"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintStart_toStartOf="@id/guideline"
             app:layout_constraintTop_toBottomOf="@+id/checkBox" />
@@ -183,13 +204,13 @@
                 android:id="@+id/radioButton2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Flock" />
+                android:text="@string/rb_2" />
 
             <RadioButton
                 android:id="@+id/radioButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Zodiac" />
+                android:text="@string/rb_1" />
 
         </RadioGroup>
 
@@ -202,7 +223,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:text="On what is the Mona Lisa painted?"
+            android:text="@string/third_q"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -227,13 +248,13 @@
                 android:id="@+id/radioButton3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Paper" />
+                android:text="@string/rb_3" />
 
             <RadioButton
                 android:id="@+id/radioButton4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="wood" />
+                android:text="@string/rb_4" />
 
         </RadioGroup>
 
@@ -244,12 +265,8 @@
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:text="what color does the bride traditionally wear in China?"
+            android:text="@string/forth_q"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
@@ -271,13 +288,13 @@
                 android:id="@+id/radioButton5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Red" />
+                android:text="@string/rb_5" />
 
             <RadioButton
                 android:id="@+id/radioButton6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="White" />
+                android:text="@string/rb_6" />
 
         </RadioGroup>
 
@@ -290,7 +307,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:text="what is the part of the human body which ca expand 20 times its normal size?"
+            android:text="@string/fifth_q"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -307,8 +324,9 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:ems="10"
-            android:hint="ex: head"
+            android:hint="@string/et_1"
             android:inputType="textPersonName"
+            android:autofillHints="no"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.216"
             app:layout_constraintStart_toStartOf="@+id/guideline"
@@ -324,7 +342,7 @@
             android:layout_marginEnd="8dp"
 
             android:layout_marginRight="8dp"
-            android:text="paddling is a group of ...?"
+            android:text="@string/sixth_q"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -336,7 +354,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
-            android:text="Ducks"
+            android:text="@string/checkbox_4"
             app:layout_constraintEnd_toStartOf="@+id/checkBox5"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -347,7 +365,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
-            android:text="lions"
+            android:text="@string/checkbox_5"
             app:layout_constraintEnd_toStartOf="@+id/checkBox3"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/checkBox4"
@@ -358,8 +376,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
-            android:text="elephants"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/checkbox_6"
+            app:layout_costraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/checkBox5"
             app:layout_constraintTop_toBottomOf="@+id/textView10" />
@@ -373,7 +391,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:text="Who was the founder of Apple corporation?"
+            android:text="@string/eighth_q"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -389,7 +407,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="1dp"
             android:layout_marginRight="1dp"
-            android:text="All living things contain...?"
+            android:text="@string/seventh_q"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintEnd_toStartOf="@+id/editText4"
             app:layout_constraintHorizontal_bias="0.0"
@@ -406,7 +424,8 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:ems="10"
-            android:hint="Enter name"
+            android:autofillHints="no"
+            android:hint="@string/et_2"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.21"
@@ -432,14 +451,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="salt" />
+                android:text="@string/rb_7" />
 
             <RadioButton
                 android:id="@+id/radioButton7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="water" />
+                android:text="@string/rb_8" />
         </RadioGroup>
 
         <Button
@@ -452,7 +471,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:text="Done !"
+            android:text="@string/done"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline"

@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">QuicKQuiZ</string>
+    <string name="name_q"> Please Enter Your Name</string>
+    <string name="name_ans">Ex: Alice Mark</string>
+    <string name="age_q"> Enter your Age!</string>
+    <string name="age_ans">Ex: 25</string>
+    <string name="first_q">What is the largest state in USA?</string>
+    <string name="checkbox_one">Alaska</string>
+    <string name="checkbox_two">New York</string>
+    <string name="checkbox_three">Los Angeles</string>
+    <string name="start">Let\'s Start</string>
+    <string name="sec_q">What name did the greek give to circle of animals?</string>
+    <string name="rb_1">zodiac</string>
+    <string name="rb_2">flock</string>
+    <string name="third_q">On What is the MonaLiza painted?</string>
+    <string name="rb_3">paper</string>
+    <string name="rb_4">wood</string>
+    <string name="forth_q">What color does the bride traditionally wear in china?</string>
+    <string name="rb_5">white</string>
+    <string name="rb_6">red</string>
+    <string name="fifth_q">What is the part in the human body which expands 20 times its normal size?</string>
+    <string name="et_1">Ex:head</string>
+    <string name="sixth_q">Paddling is a group of...?</string>
+    <string name="checkbox_4">ducks</string>
+    <string name="checkbox_5">lions</string>
+    <string name="checkbox_6">elephants</string>
+    <string name="seventh_q">All living things contain...?</string>
+    <string name="rb_7">salt</string>
+    <string name="rb_8">water</string>
+    <string name="eighth_q">Who was the founder of Apple corporation?</string>
+    <string name="et_2">write a name..</string>
+    <string name="done">DONE!</string>
 </resources>
