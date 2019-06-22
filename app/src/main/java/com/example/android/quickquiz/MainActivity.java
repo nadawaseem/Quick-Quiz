@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void calculateScore(View view){
-        EditText userName = (EditText) findViewById(R.id.editText);
+        EditText userName =  findViewById(R.id.editText);
         String name = userName.getText().toString();
         if(name.isEmpty()){
             Toast.makeText(this, "please enter your name! ", Toast.LENGTH_LONG).show();
@@ -42,14 +42,18 @@ public class MainActivity extends AppCompatActivity {
         CheckBox losAngeles = findViewById(R.id.checkBox3);
         if(alaska.isChecked()&& !losAngeles.isChecked() && !newYork.isChecked()){
             score += 1;
+        }else if(!alaska.isChecked()&& !newYork.isChecked() && !losAngeles.isChecked())
+        {
+            Toast.makeText(this,"Answer question no.1" + name + "!",Toast.LENGTH_SHORT).show();
         }
+
 
         RadioButton rb2 = findViewById(R.id.radioButton2);
         RadioButton rb1 = findViewById(R.id.radioButton);
         if(rb1.isChecked() && !rb2.isChecked()){
             score +=1;
         }else
-            Toast.makeText(this, "Answer question no.2" + name + "!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Answer question no.2" + name + "!", Toast.LENGTH_SHORT).show();
 
 
 
@@ -57,16 +61,16 @@ public class MainActivity extends AppCompatActivity {
         RadioButton rb4 = findViewById(R.id.radioButton4);
         if(rb4.isChecked() && !rb3.isChecked()){
             score +=1;
-        }else
-            Toast.makeText(this, "Answer question no.3 " + name + "!", Toast.LENGTH_LONG).show();
-        
+        }else if((!rb4.isChecked() && !rb3.isChecked()))
+            Toast.makeText(this, "Answer question no.3 " + name + "!", Toast.LENGTH_SHORT).show();
+
 
         RadioButton rb5 = findViewById(R.id.radioButton5);
         RadioButton rb6 = findViewById(R.id.radioButton6);
         if(rb6.isChecked() && !rb5.isChecked()){
             score +=1;
         }else if(!rb6.isChecked() && !rb5.isChecked())
-            Toast.makeText(this, "Answer question no.4 " + name + "!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Answer question no.4 " + name + "!", Toast.LENGTH_SHORT).show();
 
 
 
@@ -77,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
             score = score+1;
         }
         else if(editText.isEmpty()){
-            Toast.makeText(this, "Answer question no.5 " + name + "!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Answer question no.5 " + name + "!", Toast.LENGTH_SHORT).show();
         }
 
         CheckBox ducks = findViewById(R.id.checkBox4);
@@ -86,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         if(ducks.isChecked()&& !lions.isChecked() && !elephants.isChecked()){
             score += 1;
         }else if(!ducks.isChecked() && !lions.isChecked() && !elephants.isChecked()){
-            Toast.makeText(this, "answer question no.6 " + name + "!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "answer question no.6 " + name + "!", Toast.LENGTH_SHORT).show();
         }
 
         EditText ed4 = findViewById(R.id.editText4);
@@ -96,15 +100,18 @@ public class MainActivity extends AppCompatActivity {
             score = score+1;
         }
         else if(editText4.isEmpty()){
-            Toast.makeText(this, "Answer question no.7 " + name + "!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Answer question no.7 " + name + "!", Toast.LENGTH_SHORT).show();
         }
 
         RadioButton rb7 = findViewById(R.id.radioButton7);
         RadioButton rb8 = findViewById(R.id.radioButton8);
         if(rb7.isChecked() && !rb8.isChecked()){
             score +=1;
-        }else if(!rb7.isChecked() && !rb8.isChecked())
-            Toast.makeText(this, "Answer question no.8 " + name + "!", Toast.LENGTH_LONG).show();
+        }else if(!rb7.isChecked() && !rb8.isChecked()) {
+            Toast.makeText(this, "Answer question no.8 " + name + "!", Toast.LENGTH_SHORT).show();
+        }
+        Toast.makeText(this, "your score is "+score + " out of 8 "+ name  , Toast.LENGTH_LONG).show();
+
 
 
     }
