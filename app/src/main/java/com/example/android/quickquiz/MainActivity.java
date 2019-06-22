@@ -10,7 +10,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
      String name;
-     int score=0;
+     int score;
+     boolean allQuestionsAnswered=true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         EditText userName =  findViewById(R.id.editText);
         String name = userName.getText().toString();
         if(name.isEmpty()){
+            boolean allQuestionsAnswered =false;
             Toast.makeText(this, "please enter your name! ", Toast.LENGTH_LONG).show();
         }
 
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
             score = score+1;
         }
         else {
+            boolean allQuestionsAnswered =false;
             Toast.makeText(this, "please enter your Age " + name + "!", Toast.LENGTH_LONG).show();
         }
 
@@ -44,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
             score += 1;
         }else if(!alaska.isChecked()&& !newYork.isChecked() && !losAngeles.isChecked())
         {
+            boolean allQuestionsAnswered =false;
             Toast.makeText(this,"Answer question no.1" + name + "!",Toast.LENGTH_SHORT).show();
         }
 
@@ -52,25 +56,31 @@ public class MainActivity extends AppCompatActivity {
         RadioButton rb1 = findViewById(R.id.radioButton);
         if(rb1.isChecked() && !rb2.isChecked()){
             score +=1;
-        }else
-            Toast.makeText(this, "Answer question no.2" + name + "!", Toast.LENGTH_SHORT).show();
+        }else if (!rb1.isChecked() && !rb2.isChecked()){
+            boolean allQuestionsAnswered = false;
 
+            Toast.makeText(this, "Answer question no.2" + name + "!", Toast.LENGTH_SHORT).show();
+        }
 
 
         RadioButton rb3 = findViewById(R.id.radioButton3);
         RadioButton rb4 = findViewById(R.id.radioButton4);
         if(rb4.isChecked() && !rb3.isChecked()){
             score +=1;
-        }else if((!rb4.isChecked() && !rb3.isChecked()))
+        }else if((!rb4.isChecked() && !rb3.isChecked())) {
+            boolean allQuestionsAnswered =false;
             Toast.makeText(this, "Answer question no.3 " + name + "!", Toast.LENGTH_SHORT).show();
+        }
 
 
         RadioButton rb5 = findViewById(R.id.radioButton5);
         RadioButton rb6 = findViewById(R.id.radioButton6);
         if(rb6.isChecked() && !rb5.isChecked()){
             score +=1;
-        }else if(!rb6.isChecked() && !rb5.isChecked())
+        }else if(!rb6.isChecked() && !rb5.isChecked()) {
+            boolean allQuestionsAnswered =false;
             Toast.makeText(this, "Answer question no.4 " + name + "!", Toast.LENGTH_SHORT).show();
+        }
 
 
 
@@ -81,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
             score = score+1;
         }
         else if(editText.isEmpty()){
+            boolean allQuestionsAnswered =false;
             Toast.makeText(this, "Answer question no.5 " + name + "!", Toast.LENGTH_SHORT).show();
         }
 
@@ -90,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
         if(ducks.isChecked()&& !lions.isChecked() && !elephants.isChecked()){
             score += 1;
         }else if(!ducks.isChecked() && !lions.isChecked() && !elephants.isChecked()){
+            boolean allQuestionsAnswered =false;
             Toast.makeText(this, "answer question no.6 " + name + "!", Toast.LENGTH_SHORT).show();
         }
 
@@ -100,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
             score = score+1;
         }
         else if(editText4.isEmpty()){
+            boolean allQuestionsAnswered =false;
             Toast.makeText(this, "Answer question no.7 " + name + "!", Toast.LENGTH_SHORT).show();
         }
 
@@ -108,9 +121,15 @@ public class MainActivity extends AppCompatActivity {
         if(rb7.isChecked() && !rb8.isChecked()){
             score +=1;
         }else if(!rb7.isChecked() && !rb8.isChecked()) {
+            boolean allQuestionsAnswered =false;
             Toast.makeText(this, "Answer question no.8 " + name + "!", Toast.LENGTH_SHORT).show();
         }
-        Toast.makeText(this, "your score is "+score + " out of 8 "+ name  , Toast.LENGTH_LONG).show();
+
+        if(allQuestionsAnswered==true) {
+            Toast.makeText(this, "your score is " + score + " out of 8 " + name, Toast.LENGTH_LONG).show();
+            int score = 0;
+        }
+
 
 
 
